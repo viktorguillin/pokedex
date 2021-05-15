@@ -5,6 +5,7 @@ include_once('config/conexion.php');
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+
 $pokemon = $conexion->getPokemones('id', $id)[0];
 ?>
     <link rel="StyleSheet" href="css/pokemon.css" type="text/css">

@@ -5,6 +5,8 @@ include_once('config/conexion.php');
 
 $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : null;
 
+
+
 $pokemones = $conexion->getPokemones('nombre', $nombre);
 $no_encontrado = count($pokemones) == 0;
 
