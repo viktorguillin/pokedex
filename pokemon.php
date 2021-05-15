@@ -5,6 +5,11 @@ include_once('config/conexion.php');
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+$conexion = new DatabaseQuerys("127.0.0.1",
+    "3306",
+    "pokedex-facundo-rivero",
+    "root",
+    "");
 
 $pokemon = $conexion->getPokemones('id', $id)[0];
 ?>

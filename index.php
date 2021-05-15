@@ -1,11 +1,16 @@
 <?php
-include_once('header.php');
-include_once('config/funciones.php');
-include_once('config/conexion.php');
+include_once 'header.php';
+include_once 'config/funciones.php';
+include_once 'config/conexion.php';
 
 $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : null;
 
-
+include_once $_SERVER['DOCUMENT_ROOT']."/config/DatabaseQuerys.php";
+$conexion = new DatabaseQuerys("127.0.0.1",
+    "3306",
+    "pokedex-facundo-rivero",
+    "root",
+    "");
 
 $pokemones = $conexion->getPokemones('nombre', $nombre);
 $no_encontrado = count($pokemones) == 0;

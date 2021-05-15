@@ -3,6 +3,15 @@ include_once('../header.php');
 include_once('../config/funciones.php');
 include_once('../config/conexion.php');
 
+include_once $_SERVER['DOCUMENT_ROOT']."/config/DatabaseQuerys.php";
+$conexion = new DatabaseQuerys("127.0.0.1",
+    "3306",
+    "pokedex-facundo-rivero",
+    "root",
+    ""
+);
+
+
 $pokemon['id'] = isset($_GET['id']) ? $_GET['id'] : -1;
 $pokemon['nombre'] = '';
 $pokemon['descripcion'] = '';
@@ -22,7 +31,7 @@ if ( $pokemon['id'] !== -1){
 <?php } ?>
 
 <div class="container mt-5">
-    <form  enctype="multipart/form-data" action="http://<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']; ?>/pokedex/admin/procesarPokemon.php" method="post">
+    <form  enctype="multipart/form-data" action="procesarPokemon.php" method="post">
         <input type="hidden" name="id" value="<?=$pokemon['id'];?>" >
         <div class="form-group mt-3">
             <label for="nombre">Nombre</label>

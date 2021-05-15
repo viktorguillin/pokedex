@@ -1,5 +1,13 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/pokedex/config/conexion.php');
+//include($_SERVER['DOCUMENT_ROOT'].'/pokedex/config/conexion.php');
+
+include_once $_SERVER['DOCUMENT_ROOT']."/config/DatabaseQuerys.php";
+$conexion = new DatabaseQuerys("127.0.0.1",
+    "3306",
+    "pokedex-facundo-rivero",
+    "root",
+    ""
+);
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
