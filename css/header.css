@@ -1,0 +1,20 @@
+.logo{
+    display: block;
+    width: 35%;
+    margin: auto;
+}
+
+table{
+    width: 80%!important;
+}
+
+.img__tabla img, td img{
+    max-width: 40px;
+}
+
+td p, td a{
+}
+
+i{
+    cursor: pointer;
+}
