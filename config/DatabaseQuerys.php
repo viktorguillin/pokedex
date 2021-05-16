@@ -23,7 +23,7 @@ class DatabaseQuerys{
         return mysqli_connect($this->host,
             $this->usuario,
             $this->pass,
-            "pokedex-facundo-rivero",
+            "pokedexfacundorivero",
             $this->port
         );
     }
